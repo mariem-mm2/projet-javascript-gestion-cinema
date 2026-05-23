@@ -323,4 +323,4 @@ class AppRouter {
 document.addEventListener('DOMContentLoaded', async () => {
     const router = new AppRouter();
     await router.init();
-});
+});git 
