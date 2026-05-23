@@ -146,18 +146,14 @@ class StorageManager {
 
 const storage = new StorageManager();
 
-// ============================================
-// API SERVICE - 100% GRATUITE SANS CLÉ
-// ============================================
+
 class ApiService {
     static async fetchFilmsNowPlaying() {
-        // Essayer l'API gratuite Sample APIs (pas de clé requise)
         try {
             const response = await fetch(CONFIG.SAMPLE_API);
             if (!response.ok) throw new Error('Sample API error');
             const data = await response.json();
             if (Array.isArray(data) && data.length > 0) {
-                // Adapter le format Sample API au format attendu
                 return data.slice(0, 6).map((m, index) => ({
                     id: m.id || index + 1,
                     title: m.title || m.name || 'Film sans titre',
@@ -171,7 +167,6 @@ class ApiService {
             console.warn('API externe indisponible (CORS ou erreur), utilisation fallback local:', error);
         }
         
-        // Fallback 100% offline - données codées en dur
         console.log('Utilisation des données fallback locales');
         return [...FALLBACK_MOVIES];
     }

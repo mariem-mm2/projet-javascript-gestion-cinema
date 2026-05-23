@@ -163,12 +163,10 @@ class PagePayer {
                   '💳 Carte : **** **** **** ' + reservation.paiement.carteFin + '\n\n' +
                   'Votre réservation est enregistrée !');
 
-            // Nettoyer la session
             StorageManager.session.remove('filmSelectionne');
             StorageManager.session.remove('siegesSelectionnes');
             StorageManager.session.remove('enPaiement');
 
-            // 🔴 Redirection directe vers l'accueil (pas de confirmer.html)
             window.location.href = 'index.html';
 
         } catch (error) {
@@ -184,7 +182,6 @@ class PagePayer {
     }
 }
 
-// ❌ PageConfirmer SUPPRIMÉE - plus besoin
 
 class PageConsulterReservations {
     constructor() {
@@ -291,7 +288,6 @@ class AppRouter {
         this.pages = {
             'index.html': PageConsulter, '': PageConsulter,
             'reserver.html': PageReserver, 'payer.html': PagePayer,
-            // ❌ 'confirmer.html': PageConfirmer SUPPRIMÉ
             'consulter.html': PageConsulterReservations
         };
     }
