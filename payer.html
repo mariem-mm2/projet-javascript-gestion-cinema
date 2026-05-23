@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paiement - Cinéma Gestion</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 Cinéma Gestion</h1>
+        <nav>
+            <a href="index.html">Films</a>
+            <a href="consulter.html">Mes Réservations</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>💳 Paiement sécurisé</h2>
+        
+        <div class="recap-paiement">
+            <h3>Récapitulatif</h3>
+            <p><strong>Film:</strong> <span id="pay-film"></span></p>
+            <p><strong>Sièges:</strong> <span id="pay-sieges"></span></p>
+            <p><strong>Nombre de places:</strong> <span id="pay-nb-places"></span></p>
+            <p><strong>Total:</strong> <span id="pay-total"></span> €</p>
+        </div>
+
+        <form id="pay-form" class="formulaire-paiement">
+            <h3>Informations de paiement</h3>
+            
+            <div class="form-group">
+                <label for="pay-nom">Nom sur la carte</label>
+                <input type="text" id="pay-nom" placeholder="JEAN DUPONT" required>
+            </div>
+
+            <div class="form-group">
+                <label for="pay-numero">Numéro de carte</label>
+                <input type="text" id="pay-numero" placeholder="1234 5678 9012 3456" maxlength="19" required>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="pay-date">Date d'expiration</label>
+                    <input type="text" id="pay-date" placeholder="MM/AA" maxlength="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="pay-cvv">CVV</label>
+                    <input type="text" id="pay-cvv" placeholder="123" maxlength="3" required>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button type="button" id="btn-retour">⬅️ Retour</button>
+                <button type="button" id="btn-payer">✅ Payer maintenant (0€)</button>
+            </div>
+        </form>
+    </main>
+
+    <script src="core.js"></script>
+    <script src="services.js"></script>
+    <script src="pages.js"></script>
+</body>
+</html>

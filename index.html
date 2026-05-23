@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinéma Gestion - Films à l'affiche</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 Cinéma Gestion</h1>
+        <nav>
+            <a href="index.html" class="active">Films</a>
+            <a href="consulter.html">Mes Réservations</a>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Films à l'affiche</h2>
+        <div id="error-message" class="hidden error-message"></div>
+        <div id="films-container" class="films-grid">
+            <p class="loading">Chargement des films...</p>
+        </div>
+    </main>
+
+    <script src="core.js"></script>
+    <script src="services.js"></script>
+    <script src="pages.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Gestion - Mes Reservations</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 Cinema Gestion</h1>
+        <p>Gestion de vos reservations</p>
+        <nav>
+            <a href="index.html">🏠 Accueil</a>
+            <a href="consulter.html" class="active">📋 Mes Reservations</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="mes-reservations">
+            <h2>Mes Reservations</h2>
+            <p class="instructions">Consultez, modifiez ou annulez vos reservations</p>
+            <div id="liste-reservations"></div>
+            <div style="text-align: center; margin-top: 20px;">
+                <button onclick="window.location.href='index.html'" style="background: #2ecc71;">➕ Ajouter une nouvelle reservation</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- MODAL POUR MODIFICATION -->
+    <div id="modal-modif" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="fermerModal()">&times;</span>
+            <h3>✏️ Modifier ma reservation</h3>
+
+            <div id="modif-info"></div>
+
+            <p class="instructions">Cliquez sur les places pour modifier votre selection</p>
+            <div id="modif-plan-salle"></div>
+
+            <div id="modif-legende">
+                <div class="legende-item">
+                    <div class="place garde" style="cursor: default;"></div>
+                    <span>Gardee</span>
+                </div>
+                <div class="legende-item">
+                    <div class="place nouvelle" style="cursor: default;"></div>
+                    <span>Nouvelle</span>
+                </div>
+                <div class="legende-item">
+                    <div class="place retiree" style="cursor: default;"></div>
+                    <span>Retiree</span>
+                </div>
+                <div class="legende-item">
+                    <div class="place dispo" style="cursor: default;"></div>
+                    <span>Disponible</span>
+                </div>
+                <div class="legende-item">
+                    <div class="place reservee" style="cursor: default;"></div>
+                    <span>Reservee</span>
+                </div>
+            </div>
+
+            <div id="modif-recap">
+                <p><strong>Places selectionnees:</strong> <span id="modif-sieges-actuels">-</span></p>
+                <p><strong>Total:</strong> <span id="modif-total">0</span>€</p>
+            </div>
+
+            <div class="modal-actions">
+                <button id="btn-modif-annuler" onclick="fermerModal()">❌ Annuler</button>
+                <button id="btn-modif-confirmer" onclick="confirmerModification()">✅ Confirmer les modifications</button>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Projet FrontEnd - Technologies JavaScript</p>
+    </footer>
+
+<script src="core.js"></script>
+<script src="services.js"></script>
+<script src="pages.js"></script>
+</body>
+</html>

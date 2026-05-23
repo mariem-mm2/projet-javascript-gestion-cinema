@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Gestion - Reserver</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>🎬 Cinema Gestion</h1>
+        <p>Reservation de seances</p>
+        <nav>
+            <a href="index.html">🏠 Accueil</a>
+            <a href="consulter.html">📋 Mes Reservations</a>
+        </nav>
+    </header>
+
+    <main>
+        <section id="reservation-section">
+            <h2 id="selected-film-title">Film Selectionne</h2>
+            
+            <div id="film-info"></div>
+
+            <div class="instructions">
+                <p>📌 Cliquez sur les places vertes pour les selectionner</p>
+            </div>
+
+            <div id="plan-salle"></div>
+
+            <div id="legende">
+                <div class="legende-item">
+                    <div class="place dispo" style="cursor: default;"></div>
+                    <span>Disponible</span>
+                </div>
+                <div class="legende-item">
+                    <div class="place selectionnee" style="cursor: default;"></div>
+                    <span>Selectionnee</span>
+                </div>
+                <div class="legende-item">
+                    <div class="place reservee" style="cursor: default;"></div>
+                    <span>Reservee</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="panier-section">
+            <h2>Panier</h2>
+            <div id="panier-content">
+                <p id="panier-vide" class="loading">Aucune place selectionnee</p>
+                <div id="panier-details" class="hidden">
+                    <p><strong>Film:</strong> <span id="panier-film"></span></p>
+                    <p><strong>Places:</strong> <span id="panier-sieges"></span></p>
+                    <p style="font-size: 1.2em; margin-top: 15px;"><strong>Total:</strong> <span id="panier-total">0</span>€</p>
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <button id="btn-annuler" onclick="annulerReservation()">❌ Annuler</button>
+                <button id="btn-payer" onclick="allerPayer()">💳 Continuer vers paiement</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>Projet FrontEnd - Technologies JavaScript</p>
+    </footer>
+
+    <script src="core.js"></script>
+    <script src="services.js"></script>
+    <script src="pages.js"></script></body>
+</html>
